@@ -1,5 +1,3 @@
-package hq9plus;
-
 import java.util.Scanner;
 
 public class Interpreter {
