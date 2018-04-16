@@ -3,22 +3,23 @@ package hq9plus;
 public class Interpreter {
 	@SuppressWarnings("unused")
 	private int accumulator;
-	private String str;
+	private String source;
 	
 	public Interpreter(String s) {
-		str = s;
+		source = s;
 	}
 	
 	public String interpret() {
 		String output = "";
+		accumulator = 0;
 		
-		for(int i = 0; i < str.length(); i++) {
-			switch(Character.toUpperCase(str.charAt(i))) {
+		for(int i = 0; i < source.length(); i++) {
+			switch(Character.toUpperCase(source.charAt(i))) {
 			case 'H':
 				output += "Hello, world!\n";
 				break;
 			case 'Q':
-				output += str + "\n";
+				output += source + "\n";
 				break;
 			case '9':
 				for(int j = 99; j > 1; j--)
@@ -31,6 +32,10 @@ public class Interpreter {
 			}
 		}
 		
-		return output.substring(0, output.length() - 1);
+		return output;
+	}
+	
+	public void set(String s) {
+		source = s;
 	}
 }
