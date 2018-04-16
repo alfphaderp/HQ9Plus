@@ -3,11 +3,11 @@ import hq9plus.Interpreter;
 
 public class Main {
 	public static void main(String[] args) {
-		Interpreter i;
+		Interpreter i = new Interpreter("");
 		
 		try(Scanner in = new Scanner(System.in)) {
 			while(true) {
-				i = new Interpreter(in.nextLine());
+				i.set(in.nextLine());
 				System.out.println(i.interpret());
 			}
 		}
